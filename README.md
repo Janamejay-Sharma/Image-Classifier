@@ -1,5 +1,5 @@
 # Image-Classifier
-An image classification neural network written using Tensorflow
+An image classification neural network written using Tensorflow.
 
 image-classifier.py: Creates and trains the neural network model.
 
