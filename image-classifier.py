@@ -59,22 +59,18 @@ model.add(layers.Conv2D(filters=64, kernel_size=(3,3), activation='relu'))
 # Flatten input to one dimension
 model.add(layers.Flatten())
 
-"""
-    Dense implements the operation: output = activation(dot(input, kernel) + bias),
-    where activation is the element-wise activation function passed as the activation argument
-"""
+# Performs the operation: output = activation(dot(input, kernel) + bias)
 model.add(layers.Dense(units=64, activation='relu'))
 
 """
-    Output layer, 10 units for each class of image
-    Performs the function: output = activation(dot(input, kernel) + bias)
+    Output layer, 10 units, 1 for each class of image
     'softmax' normalizes output so all values sum to 1
     This is useful since we want the probability of an image belonging to a class
 """
 model.add(layers.Dense(units=10, activation='softmax'))
 
 """
-    Loss function is used to measure error or deviation
+    Loss function measures error or deviation
     "sparse" allows only non-zero values to be added to the matrix of labels
 """
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
