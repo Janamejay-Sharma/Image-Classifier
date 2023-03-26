@@ -1,4 +1,5 @@
-from tensorflow.keras import datasets, layers, models
+from tensorflow import keras
+from keras import datasets, models, layers
 
 """
     The function call datasets.cifar10.load_data() returns:
