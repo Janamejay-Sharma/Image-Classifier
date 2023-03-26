@@ -1,8 +1,8 @@
 from tensorflow.keras import datasets, layers, models
 
 """
-    datasets.cifar10.load_data() returns (x_train, y_train), (x_test, y_test), where:
-    
+    The function call datasets.cifar10.load_data() returns:
+        (x_train, y_train), (x_test, y_test), where:
     x_train: uint8 NumPy array of grayscale image data with shapes (50000, 32, 32, 3), containing the training data. Pixel values range from 0 to 255.
     y_train: uint8 NumPy array of labels (integers in range 0-9) with shape (50000, 1) for the training data.
     x_test: uint8 NumPy array of grayscale image data with shapes (10000, 32, 32, 3), containing the test data. Pixel values range from 0 to 255.
