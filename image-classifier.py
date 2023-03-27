@@ -11,7 +11,7 @@ from keras import datasets, models, layers
 """
 (training_images, training_labels), (testing_images, testing_labels) = datasets.cifar10.load_data()
 
-# Convert images to grayscale:
+# Reduce RGB values to a scale of 0 to 1, for faster training
 training_images = training_images / 255
 testing_images = testing_images / 255
 
@@ -49,8 +49,6 @@ model.add(layers.MaxPooling2D(pool_size=(2,2)))
 
 # Add another convolution layer with 64 feature maps
 model.add(layers.Conv2D(filters=64, kernel_size=(3,3), activation='relu'))
-
-# Add another maxpool layer
 model.add(layers.MaxPooling2D(pool_size=(2,2)))
 
 # Add another convolution layer with 64 feature maps
@@ -72,6 +70,7 @@ model.add(layers.Dense(units=10, activation='softmax'))
 """
     Loss function measures error or deviation
     "sparse" allows only non-zero values to be added to the matrix of labels
+    "categorical" as the result is not binary (10 possibilities)
 """
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
